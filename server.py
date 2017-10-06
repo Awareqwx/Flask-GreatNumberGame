@@ -41,6 +41,8 @@ def guess():
     return redirect("/")
 @app.route("/success")
 def success():
+    if session["guess"] != session["random"]:
+        return redirect("/")
     return render_template("success.html", correct=session["random"], count=session["count"])
 @app.route("/reset")
 def reset():
