@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"?>
+        <title>Counter</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+        <div id="wrapper">    
+            <h2>Welcome to the Great Number Game!</h2>
+            <h4>I am thinking of a number between 1 and 100</h4>
+            <h4>{{output}}</h4>
+            <form action="/guess", method="post">
+                <input type="text" name="guess", placeholder={{lastguess}}>
+                <input type="submit" value="Submit">
+            </form>
+            <h4>Guesses: {{count}}</h4>
+        </div>
+    </body>
+</html>
